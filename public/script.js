@@ -291,8 +291,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
             // Muestra el SweetAlert
             Swal.fire({
-              title: 'Para realizar una reserva necesitas hacer una seña de $400, en caso de no poder asistir al turno  los mismos seran reintegrados, o quedarán a favor en tu proxio corte',
-              text: 'Alias: ale-monkeys.',
+              title: '👉Para reservar realizá una seña de $400 (Si no podes venier y avisas con tiempo seran reintegrados, o quedarán a favor en tu proxio corte 💈)',
+              text: 'Alias: ale-monkeys',
               text: 'CBU:0000003100035584071991 ',
               icon: 'info',
               confirmButtonText: 'OK'
