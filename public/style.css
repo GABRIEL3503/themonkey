@@ -244,3 +244,7 @@ max-width: 140px;
   #menufoot{
 font-size: 13px!important; 
 padding: 2px!important; }
+
+.swal2-html-container{
+font-size: 45px!important;
+}
