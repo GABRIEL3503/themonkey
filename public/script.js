@@ -291,9 +291,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
             // Muestra el SweetAlert
             Swal.fire({
-              title: '👉Para reservar realizá una seña de $400 (Si no podes venier y avisas con tiempo seran reintegrados, o quedarán a favor en tu proxio corte 💈)  Gracias!',
+              title: '👉Para reservar realizá una seña de $400 <br>(Si no podes venier y avisas con tiempo seran reintegrados, o quedarán a favor en tu proxio corte 💈) <br> Gracias! ',
             
-              text: 'Alias: ale-monkeys',
+              text: '✔Alias: ale-monkeys',
               icon: 'info',
               confirmButtonText: 'OK'
             }).then((result) => {
