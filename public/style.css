@@ -135,6 +135,7 @@ background-position: center;
   }
 
   ul {
+    margin-bottom: 15px;
     margin-top: 255px;
 
     list-style: none;
@@ -192,7 +193,7 @@ background-position: center;
     align-content: center;
     align-items: center;}
     #social-links img{  
-max-width: 140px;
+max-width: 130px;
     }
     .redes{
       display: flex;
