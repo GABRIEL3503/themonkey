@@ -263,9 +263,11 @@ font-size: 45px!important;
 }
 
 .link-accion {
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #3f3f3f; /* o el color que prefieras */
-  font-weight: bold; /* o el peso que prefieras */
-  /* Cualquier otro estilo que quieras aplicar */
+  font-size: 35px;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #3f3f3f;
+    font-weight: bold;
 }
