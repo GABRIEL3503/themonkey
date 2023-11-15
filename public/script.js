@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Tu función para autenticar al usuario
   function authenticate(password) {
-    const correctPassword = "admin";
+    const correctPassword = "luca2020";
     if (password === correctPassword) {
       localStorage.setItem("authenticated", "true");
       return true;
@@ -272,44 +272,64 @@ document.addEventListener("DOMContentLoaded", function () {
           reserveButton.textContent = 'Reservar';
           
 
-          // Capturar la fecha y la hora del turno actual
-          let fecha = diaFormateado;
-          // Asegúrate de que esto coincide con cómo obtienes la fecha desde el backend
-          let hora = turno.hora;  // Asegúrate de que esto coincide con cómo obtienes la hora desde el backend
-
-          // Construir el mensaje
-          let mensaje = `Hola! Quiero reservar un turno para el día ${fecha} a las ${hora}. Te comparto el coprobante de pago de la seña `;
-
-          // Codificar el mensaje
-          let mensajeCodificado = encodeURIComponent(mensaje);
-
-          // Construir la URL completa
-          let urlWhatsApp = `https://api.whatsapp.com/send?phone=2996724372&text=${mensajeCodificado}`;
+        
 
           // Asignar la URL al evento 'click' del botón
-          reserveButton.addEventListener("click", function () {
-  
-            // Muestra el SweetAlert
-            Swal.fire({
-              title: '👉Para reservar realizá una seña de $400 <br>  💈 Si no podes venier y avisas con tiempo seran reintegrados, o quedarán a favor en tu proxio corte 💈 <br> Gracias! ',
-            
-              text: '✔Alias: ale-monkeys',
-              icon: 'info',
-              confirmButtonText: 'OK'
-            }).then((result) => {
-              // Redirige al usuario a WhatsApp
-              if (result.isConfirmed || !result.isConfirmed) {
-                window.open(urlWhatsApp, '_blank');
-              }
-            });
-          });
+   // Asignar la URL al evento 'click' del botón
+   var cbu = "000003100035584071991";
+   var aliasCBU = "ale-monkeys";
+   var phoneNumber = "+5492995328099";
+reserveButton.addEventListener("click", function () {
+  // Capturar la fecha y la hora del turno actual
+  let fecha = diaFormateado;
+  // Asegúrate de que esto coincide con cómo obtienes la fecha desde el backend
+  let hora = turno.hora;  // Asegúrate de que esto coincide con cómo obtienes la hora desde el backend
+
+  // Construir el mensaje
+  let mensaje = `Hola! Quiero reservar un turno para el día ${fecha} a las ${hora}. Te comparto el coprobante de pago de la seña `;
+
+  // Codificar el mensaje
+  let mensajeCodificado = encodeURIComponent(mensaje);
+
+  // Construir la URL completa
+  let urlWhatsApp = `https://api.whatsapp.com/send?phone=2996724372&text=${mensajeCodificado}`;
+  // Muestra el SweetAlert
+  Swal.fire({
+    title: 'Detalles de Pago',
+    html:`
+    <p>👉Para reservar realizá una seña de $400 <br> 💈 Si no puedes venir y avisas con tiempo serán reintegrados, o quedarán a favor en tu próximo corte 💈 <br> Gracias!</p>
+    <p><strong>CBU:</strong> ${cbu}</p>
+    <p><strong>Alias:</strong> ${aliasCBU}</p>
+    <p><strong>Teléfono:</strong> ${phoneNumber}</p>
+    <div id="acciones" style="display: flex; flex-direction: column;">
+      <a href="javascript:void(0);" id="copyCBU" class="link-accion">COPIAR CBU</a>
+      <a href="javascript:void(0);" id="copyAlias" class="link-accion">COPIAR ALIAS</a>
+      <a href="${urlWhatsApp}" target="_blank" class="link-accion">COMPARTIR COMPROBANTE</a>
+    </div>
+  `,
+    icon: 'info',
+    showCancelButton: true,
+    showConfirmButton: false,
+    cancelButtonText: 'Cerrar',
+  });
+});
+
+// Copiar CBU o Alias al portapapeles
+document.addEventListener('click', function(event) {
+  if (event.target.id === 'copyCBU' || event.target.id === 'copyAlias') {
+    const textToCopy = event.target.id === 'copyCBU' ? cbu : aliasCBU;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      event.target.textContent = `${event.target.id === 'copyCBU' ? 'CBU' : 'Alias'} Copiado`; // Cambiar texto del enlace
+      setTimeout(() => {
+        event.target.textContent = `Copiar ${event.target.id === 'copyCBU' ? 'CBU' : 'Alias'}`; // Restablecer texto después de 2 segundos
+      }, 2000);
+    }).catch(err => {
+      Swal.showValidationMessage(`Error: ${err}`);
+    });
+  }
+});
         
-          
-          
-          
-          
-          
-          
+       
 
           // Aquí podrías añadir un evento para realizar la reserva
           celdaBotones.appendChild(reserveButton);
@@ -328,11 +348,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error('Error:', error));
 });
 // updateUI();
-
-
-
-
-
 
 
 
