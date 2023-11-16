@@ -297,7 +297,7 @@ reserveButton.addEventListener("click", function () {
   Swal.fire({
     title: 'RESERVA DE TURNO',
     html:`
-    <p>👉Para reservar realizá una seña de $400 <br> 💈 Si no puedes venir y avisas con tiempo serán reintegrados, o quedarán a favor en tu próximo corte 💈 <br> Gracias!</p>
+    <p>👉Para reservar realizá una seña de $400 <br> 💈 Si no podés asistir avisá con anticipación, y tu seña quedará a favor en tu próximo corte 💈 <br> Gracias!</p>
     <p><strong>CBU:</strong> ${cbu}</p>
     <p><strong>Alias:</strong> ${aliasCBU}</p>
     <p><strong>Teléfono:</strong> ${phoneNumber}</p>
