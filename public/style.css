@@ -271,3 +271,8 @@ font-size: 45px!important;
     color: #3f3f3f;
     font-weight: bold;
 }
+#loguin-button{
+  font-weight: 100;
+    color: white;
+    background-color: transparent;
+}
