@@ -276,3 +276,7 @@ font-size: 45px!important;
     color: white;
     background-color: transparent;
 }
+
+.swiper-button-prev, .swiper-button-next{
+  color: white!important;
+}
