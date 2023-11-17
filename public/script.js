@@ -276,8 +276,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Asignar la URL al evento 'click' del botón
    // Asignar la URL al evento 'click' del botón
-   var cbu = "000003100035584071991";
-   var aliasCBU = "ale-monkeys";
+   var cbu = "0000003100035584071991";
+   var aliasCBU = "alemonkeys";
    var phoneNumber = "+5492995328099";
 reserveButton.addEventListener("click", function () {
   // Capturar la fecha y la hora del turno actual
