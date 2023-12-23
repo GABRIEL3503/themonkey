@@ -1,11 +1,11 @@
 
 // Retorna true si el usuario está autenticado, de lo contrario false.
 function checkAuthentication() {
-  const isAuthenticated = localStorage.getItem("authenticated") === "true"; // Cambiado para reflejar un estado autenticado como true
+
+  const isAuthenticated = localStorage.getItem("authenticated") === "true";
   console.log("Is Authenticated:", isAuthenticated); // Muestra el estado en consola para depuración
   return isAuthenticated;
 }
-
 
 // Función para actualizar la UI según el estado de autenticación
 function updateUI() {
@@ -47,7 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Botón de login
   const loginButton = document.getElementById("login-button");
   const logoutButton = document.getElementById('logout-button');
-
+  // Asegura que el estado de autenticación sea 'false' al iniciar la app.
+  if (localStorage.getItem("authenticated") === null) {
+    localStorage.setItem("authenticated", "false");
+  }
   document.getElementById("login-button").addEventListener("click", function () {
     // Muestra el modal de SweetAlert para ingresar la contraseña
     Swal.fire({
@@ -77,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const correctPassword = "luca2020";
     if (password === correctPassword) {
       localStorage.setItem("authenticated", "true");
+      updateUI(); // Actualizar la UI para reflejar el estado autenticado
+
       return true;
     } else {
       Swal.showValidationMessage("Contraseña incorrecta");
