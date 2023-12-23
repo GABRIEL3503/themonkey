@@ -1,6 +1,6 @@
 // Tu función para verificar si el usuario está autenticado
 function checkAuthentication() {
-  const isAuthenticated = localStorage.getItem("authenticated") === "true"; // Cambiado para reflejar un estado autenticado como true
+  const isAuthenticated = localStorage.getItem("authenticated") === "false"; // Cambiado para reflejar un estado autenticado como true
   console.log("Is Authenticated:", isAuthenticated); // Agregado console.log para depuración
   return isAuthenticated;
 }
