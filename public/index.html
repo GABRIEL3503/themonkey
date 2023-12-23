@@ -9,10 +9,15 @@
   <title>Reserva de Turnos</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bodyturno">
-  <button id="login-button">Administrador</button>
-  <a style="border: none;" href="menu.html"><button id="menuback-button">Inicio</button></a>
 
+<body class="bodyturno">
+
+  <a id="back" style="border: none;" href="menu.html">
+
+    <!-- Suponiendo que estás usando una imagen como ícono -->
+    <img src="./img/arrow-left-solid (2).svg" alt="Flecha" class="icono-flecha">
+    
+      </a>
 
     <div id="schedule">
         <div class="swiper-container mySwiper">
@@ -25,11 +30,13 @@
         </div>
       </div>
       
+  <button id="login-button">Ingresar como administrador</button>
+  
 
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="script.js"></script>
+  
   <script>   // Inicialización de Swiper
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
@@ -44,8 +51,9 @@
             prevEl: ".swiper-button-prev",
         },
     });</script>
+    <script src="script.js"></script>
 </body>
 <footer>
-  <p> © 2023 Gabo | Desarrollado por</p> <a id="noStyle" href="https://octopuswebdesign.com.ar" target="_blank">Octopus</a> <p>  | Turnos-Barber ©</p>
+  <p> © 2023 | Desarrollado por</p> <a id="noStyle" href="https://octopuswebdesign.com.ar" target="_blank">Octopus</a> <p>  | TurnosOnlineApp ©</p>
 </footer>
 </html>
