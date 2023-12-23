@@ -1,7 +1,7 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
-const port = 3000;
+const port = 3003;
 
 app.get('/', (req, res) => {
   res.redirect('/menu.html');
@@ -69,7 +69,7 @@ app.post('/api/clientes', (req, res) => {
     }
 
     // Insertar el cliente (asumiendo que el turno ahora existe)
-    const insertClienteSql = `INSERT INTO clientes (nombre, telefono, email, estado_disabled) VALUES (?, ?, ?, 0)`;
+    const insertClienteSql = `INSERT INTO clientes (nombre, telefono, email) VALUES (?, ?, ?)`;
     db.run(insertClienteSql, [nombre, telefono, email], function(err) {
       if (err) {
         return res.status(400).json({ error: err.message });
@@ -85,7 +85,6 @@ app.post('/api/clientes', (req, res) => {
     });
   });
 });
-
 
 
 
