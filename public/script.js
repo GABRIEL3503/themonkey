@@ -102,9 +102,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // fetch(`https://themonkeybarber.com.ar/api/turnos/${turnoId}`, {
+    fetch(`https://themonkeybarber.com.ar/api/turnos/${turnoId}`, {
     // Actualizar en la base de datos
-    fetch(`  http://localhost:3000/api/turnos/${turnoId}`, {
+    // fetch(`  http://localhost:3000/api/turnos/${turnoId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //   solicitud al backend para obtener todos los turnos y luego los mostraremos en la página.
 
 
-  fetch('  http://localhost:3000/api/turnos')
+  fetch('https://themonkeybarber.com.ar/api/turnos')
     // fetch('https://themonkeybarber.com.ar/api/turnos')
 
     .then(response => response.json())
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const statusButton = document.createElement('button');
           const celdaBotones = document.createElement('td');
 
-          fetch(`http://localhost:3000/api/clientes/${turno.id}`)
+          fetch(`https://themonkeybarber.com.ar/api/clientes/${turno.id}`)
           .then(response => response.json())
           .then(cliente => {
             if (cliente && cliente.nombre) {
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
           
             if (botonGuardar.innerHTML === '+') {
               // Si el botón es '+', guarda el cliente
-              fetch(`http://localhost:3000/api/clientes`, {
+              fetch(`https://themonkeybarber.com.ar/api/clientes`, {
                 method: 'POST', // o 'PUT'
                 headers: {
                   'Content-Type': 'application/json',
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
               .catch(error => console.error('Error:', error));
             } else {
               // Si el botón es '-', elimina el cliente
-              fetch(`http://localhost:3000/api/clientes/${turnoId}`, {
+              fetch(`https://themonkeybarber.com.ar/api/clientes/${turnoId}`, {
                 method: 'DELETE',
                 headers: {
                   'Content-Type': 'application/json',
